@@ -1,7 +1,7 @@
-### 2017.12.30
+#### _2017.12.30_
 Still (slowly) plowing through the JS concurrency book, Kyle Simpson's [Asynch & Performance](https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/README.md). Good so far. Just discovered the github repo for it in writing this note -- hoping to get some more usable (i.e., actually executable) code samples out of this discovery.
 
-Re-installed an Ubuntu chroot image on my ASUS Chromebook. The old one, for some reason was not working. Not a huge pain, as I did't have that much installed on top of the base image (AFAIK). The initial install is *very* bare bones. This is sort of nice for Chromebooks due to the lack of disk space. I first had to install (using apt-get) a window manager, [kwin]( https://en.wikipedia.org/wiki/KWin). That shows how bare-bones the chroot image is. It's not clear whether there's any merit in doing serious dev work on the Ubuntu image, but it will be a good exercise to find out. Perl and Python are there, out of the box -- as they are with lots of other Linux desktop builds.
+Re-installed an Ubuntu chroot image on my ASUS Chromebook. The old one, for some reason was not working. Not a huge pain, as I didn't have that much installed on top of the base image (AFAIK). The initial install is *very* bare bones. This is sort of nice for Chromebooks due to the lack of disk space. I first had to install (using apt-get) a window manager, [kwin]( https://en.wikipedia.org/wiki/KWin). That shows how bare-bones the chroot image is. It's not clear whether there's any merit in doing serious dev work on the Ubuntu image, but it will be a good exercise to find out. Perl and Python are there, out of the box -- as they are with lots of other Linux desktop builds.
 
 What follows is a minimal stack of developer tools:
 1. Atom (editor)
@@ -23,7 +23,7 @@ For 2018, the plan is the following
 5. Build and deploy ci-graph as a set of application containers
 
 
-### 2017.09.10 
+#### _2017.09.10_ 
 Just re-read the diary from 2015. The Express stuff looked like a major pain... not sure it's worth revisiting in 
 the form that it was in 2+ years ago. 
 
