@@ -75,8 +75,30 @@ git repo credentials:
       (BETA)you can send your credentials to the remote repository:
       git remote set-url origin https://<USERNAME>:<PASSWORD>@github.com/path/to/repo.git
 
+resetting the remote repository origin URL:
+  git remote set-url origin https://github.com/infiniteprairie/my-dev-docs.git
+
 git add:
 
 git commit:
+    git commit -a -m "change message"
+
 
 [note: if you need to access different remote repositories with different credentials, there's a way to do that (see: https://www.shellhacks.com/git-config-username-password-store-credentials/)]
+
+
+Go
+
+There are lots of decent developer's guides out there for Go.
+
+
+NodeJS
+
+
+Java
+
+
+Docker
+
+
+NGINX 
