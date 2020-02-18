@@ -78,10 +78,20 @@ git repo credentials:
 resetting the remote repository origin URL:
   git remote set-url origin https://github.com/infiniteprairie/my-dev-docs.git
 
-git add:
+  git add:
+    mostly straightforward
 
 git commit:
     git commit -a -m "change message"
+
+git push:
+    If you try and push to a repository that doesn't exist, you'll get an error
+
+
+    git commit -m "first commit"
+    git remote add origin https://github.com/infiniteprairie/http-go.git
+    --> make sure the remote repository exists now...
+    git push -u origin master
 
 
 [note: if you need to access different remote repositories with different credentials, there's a way to do that (see: https://www.shellhacks.com/git-config-username-password-store-credentials/)]
@@ -101,4 +111,4 @@ Java
 Docker
 
 
-NGINX 
+NGINX
