@@ -1,0 +1,57 @@
+
+Developer Getting Started Guide/Tips
+
+Getting a minimal environment up and running [Note: the remainder of this guide assumes some variant of a Linux-based OS will be used]
+Once you have an OS and graphical environment installed, I would suggest getting a couple of tools installed:
+1. Chromium browser. Getting this installed using the CLI is pretty straightforward. (Use the browser provided with the distro if needed to search for help on this.)
+The commands are something like this:
+  apt-cache search chromium
+  sudo apt-get install chromium-browser
+  sudo apt update
+
+2. Set up some environment variables. One of the succeeding steps will have you do a clone of your Github repository(s). [Note: If you don't have a Github account, then either create a new one, or adjust these tips to accommodate some other source code management system]. While there are other ways of doing this (e.g., via IDE plugins), this guide will instruct you to do this via the CLI. For that, we'll use the Github account name and a personal access token (Github API token) as environment variables. We will accumulate other environment variables as well, for various development-tool-usage reasons. (e.g., JAVA_HOME)
+
+My current solution for setting up environment variables is the following:
+* As part of my Github account, I have a repository called "<user-name>-dev-env-starter-set", and within that repository, I created a file called ".bash-envs". This file is a shell script file that sets up environment variables.
+* By hook or by crook, download and install this file in your home directory. (This is a bootstrapping problem, because we haven't yet set up a way to clone the repositories to the local machine.)
+* In ~/.bashrc, put the following script snippet:
+   # set (user) environment variables
+
+   if [ -f ~/.bash_envs ]; then
+       . ~/.bash_envs
+   fi
+
+* One caveat: Any environment variables containing sensitive information should be encrypted. The solution thus far is to encrypt (and base64-encode) the environment variable value and store the encrypted value. Unless the .bash_envs file says otherwise, the way to unencrypt and use the actual value is to use openssl as follows:
+    # mypass=my_secret_pass
+    # DECODED=`echo $ENCRYPTED_VAR | openssl enc -d -a -aes256 -pass pass:$my_secret_pass`
+
+
+3. Install OpenSSL, if it's not installed already. Most Linux distros already have this out-of-the-box. We will use this to encrypt and decrypt sensitive environment variables (i.e., passwords) -- see above
+
+4. Install an IDE (with Git/Github integration) or a good text editor. I am currently using Atom, installed using the CLI via the following:
+
+    sudo add-apt-repository ppa:webupd8team/atom
+    sudo apt update ; sudo apt install atom
+
+There are lots of choices here.
+
+5. Install the curl command, if not installed already. This is something as easy as:
+    sudo apt install curl
+
+
+6. [Is there a 6? If so add it here. If not, just look at the tips below for the different tooling types, as needed.]
+
+
+-----
+
+Next, we will hydrate our source file directories.
+
+1. Create a "dev" directory. This will eventually house all your development projects.
+
+2. Clone all of your current Github (or other SCMS) repositories/projects to your dev directory. For my Github repos, this is done via the following:
+
+    curl "https://api.github.com/users/$GHUSER/repos?access_token=$GH_PERSONAL_ACCESS_TOKEN"  | grep -e 'git_url*' | cut -d \" -f 4 | xargs -L1 git clone
+
+    (note: this worked the first time, assuming that the environment variables were set up properly and I could access the GH API to get a JSON listing of the repos -- meaning: first, test the first command separately)
+
+3. If you have no Github repositories or other starting points (and you are not "infiniteprairie"), I would suggest checking out Koding.com for some very handy "Getting Started" tutorials and bootstrapping information.
