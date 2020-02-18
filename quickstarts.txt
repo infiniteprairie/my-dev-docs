@@ -55,3 +55,28 @@ Next, we will hydrate our source file directories.
     (note: this worked the first time, assuming that the environment variables were set up properly and I could access the GH API to get a JSON listing of the repos -- meaning: first, test the first command separately)
 
 3. If you have no Github repositories or other starting points (and you are not "infiniteprairie"), I would suggest checking out Koding.com for some very handy "Getting Started" tutorials and bootstrapping information.
+
+
+
+-----
+
+Tips and Advice
+
+Git
+
+Git will do an init of a directory if a repository is cloned there. Otherwise, for an empty directory -- or for a directory into which you'll do a pull request -- you should init the directory first.
+
+git repo credentials:
+  You can set global credentials for the user name and email thusly:
+    git config --global user.name "infiniteprairie"
+    git config --global user.email "darrell@infiniteprairie.com"
+
+  Other methods of establishing credentials: (TODO)
+      (BETA)you can send your credentials to the remote repository:
+      git remote set-url origin https://<USERNAME>:<PASSWORD>@github.com/path/to/repo.git
+
+git add:
+
+git commit:
+
+[note: if you need to access different remote repositories with different credentials, there's a way to do that (see: https://www.shellhacks.com/git-config-username-password-store-credentials/)]
