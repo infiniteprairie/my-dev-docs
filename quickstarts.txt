@@ -84,9 +84,10 @@ resetting the remote repository origin URL:
 git commit:
     git commit -a -m "change message"
 
-git push:
+git push: push commits to the server repository
     If you try and push to a repository that doesn't exist, you'll get an error
 
+    The most straightforward way to do this is to ensure that the remote repository has been initialized
 
     git commit -m "first commit"
     git remote add origin https://github.com/infiniteprairie/http-go.git
@@ -95,6 +96,7 @@ git push:
 
 
 [note: if you need to access different remote repositories with different credentials, there's a way to do that (see: https://www.shellhacks.com/git-config-username-password-store-credentials/)]
+
 
 
 Go
